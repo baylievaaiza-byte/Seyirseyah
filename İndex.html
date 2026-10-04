@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kızıl Elma | Antalya Kaleiçi Özel Yat Turu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* --- RENK PALETİ & DEĞİŞKENLER --- */
+    :root {
+      --bg-cream: #F8F5F0;
+      --bg-light: #EFE9DF;
+      --sand: #DFD3C3;
+      --mocca: #8D7B68;
+      --deep-bronze: #3E3228;
+      --gold: #C5A059;
+      --gold-hover: #b08d47;
+      --text-dark: #2B231D;
+      --text-muted: #6B5E55;
+      --white: #FFFFFF;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', sans-serif;
+      --shadow: 0 10px 30px rgba(62, 50, 40, 0.08);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* --- HEADER --- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(248, 245, 240, 0.92);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(141, 123, 104, 0.2);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--deep-bronze);
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 3px;
+      font-family: var(--font-sans);
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--deep-bronze);
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .btn-nav {
+      background-color: var(--deep-bronze);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 13px !important;
+      letter-spacing: 1px;
+      transition: background 0.3s;
+    }
+
+    .btn-nav:hover {
+      background-color: var(--gold) !important;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      color: var(--white);
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(43, 35, 29, 0.45) 0%, rgba(43, 35, 29, 0.75) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero-tag {
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: 52px;
+      line-height: 1.15;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #E8E2D8;
+      margin-bottom: 30px;
+      font-weight: 300;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--white);
+      padding: 14px 34px;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+      border: 1px solid var(--gold);
+      display: inline-block;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-hover);
+      border-color: var(--gold-hover);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--white);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--deep-bronze);
+    }
+
+    /* --- BÖLÜM YAPISI --- */
+    section {
+      padding: 90px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-tag {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: var(--mocca);
+      text-transform: uppercase;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 40px;
+      color: var(--deep-bronze);
+      font-weight: 600;
+    }
+
+    /* --- TUR PLANI (11:00 - 16:00) --- */
+    .tour-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .tour-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--sand);
+      transition: transform 0.3s;
+    }
+
+    .tour-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tour-time {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .tour-card h3 {
+      font-size: 18px;
+      color: var(--deep-bronze);
+      margin-bottom: 10px;
+    }
+
+    .tour-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* --- ÖZEL KUTLAMA ALANI --- */
+    .event-section {
+      background: var(--bg-light);
+      border-radius: 20px;
+      padding: 60px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 40px;
+      border: 1px solid var(--sand);
+    }
+
+    .event-video-wrapper {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      line-height: 0;
+    }
+
+    .event-video {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .event-content h3 {
+      font-family: var(--font-serif);
+      font-size: 34px;
+      color: var(--deep-bronze);
+      margin-bottom: 16px;
+    }
+
+    .event-content p {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+
+    .event-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .event-list li {
+      font-size: 15px;
+      color: var(--deep-bronze);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .event-list li::before {
+      content: "✦";
+      color: var(--gold);
+      font-size: 14px;
+    }
+
+    /* --- REZERVASYON FORMU & IBAN KARTI --- */
+    .booking-wrapper {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      background: var(--white);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--sand);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--deep-bronze);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--sand);
+      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      background: var(--bg-cream);
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    .form-control:focus {
+      border-color: var(--gold);
+      background: var(--white);
+    }
+
+    .iban-card {
+      background: linear-gradient(145deg, #3E3228, #2B231D);
+      color: var(--white);
+      padding: 35px;
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .iban-card h4 {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--sand);
+      margin-bottom: 6px;
+    }
+
+    .bank-name {
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .iban-box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px dashed rgba(197, 160, 89, 0.4);
+      margin-bottom: 18px;
+    }
+
+    .iban-label {
+      font-size: 11px;
+      color: var(--sand);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .iban-number {
+      font-family: monospace;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin: 6px 0;
+      color: var(--white);
+      word-break: break-all;
+    }
+
+    .btn-copy {
+      background: var(--gold);
+      color: var(--white);
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: var(--gold-hover);
+    }
+
+    .iban-note {
+      font-size: 12px;
+      color: #C0B7AF;
+      line-height: 1.5;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: var(--deep-bronze);
+      color: var(--sand);
+      padding: 50px 24px 30px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .footer-info {
+      font-size: 14px;
+      color: var(--sand);
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+
+    .footer-phone {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .copyright {
+      font-size: 12px;
+      border-top: 1px solid rgba(223, 211, 195, 0.15);
+      padding-top: 20px;
+      margin-top: 20px;
+      color: #9E8F82;
+    }
+
+    /* MOBİL DÜZEN */
+    @media (max-width: 900px) {
+      .event-section, .booking-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 { font-size: 36px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        Kızıl Elma
+        <span>Kaleiçi Yatçılık</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#tur">Tur Programı</a></li>
+        <li><a href="#ozel">Özel Kutlamalar</a></li>
+        <li><a href="#rezervasyon">Rezervasyon</a></li>
+        <li><a href="#konum">Konum & İletişim</a></li>
+        <li><a href="https://wa.me/905323847324" target="_blank" class="btn-nav">WhatsApp Hattı</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO (VİDEO 1: SEYİR) -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="video-seyir.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Antalya Tarihi Kaleiçi Yat Limanı</span>
+      <h1>Akdeniz’in Mavisinde Size Özel Bir Ayrıcalık</h1>
+      <p>Kızıl Elma ile kalabalıklardan uzakta, masmavi koylarda unutulmaz bir gün geçirin.</p>
+      <div class="hero-buttons">
+        <a href="#rezervasyon" class="btn-gold">Rezervasyon Oluştur</a>
+        <a href="#tur" class="btn-outline">Programı Keşfet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GÜNLÜK TUR AKIŞI -->
+  <section id="tur">
+    <div class="section-header">
+      <span class="section-tag">Zaman Çizelgesi</span>
+      <h2 class="section-title">11:00 – 16:00 Özel Seyir Deneyimi</h2>
+    </div>
+
+    <div class="tour-grid">
+      <div class="tour-card">
+        <div class="tour-time">11:00</div>
+        <h3>Kaleiçi'nden Hareket</h3>
+        <p>Tarihi surların gölgesinden Akdeniz’e açılış, karşılama servisi ve falezler boyu seyir keyfi.</p>
+      </div>
+      <div class="tour-card">
+        <div class="tour-time">12:30</div>
+        <h3>Koylar & Yüzme Molası</h3>
+        <p>Berrak sularda yüzme, şnorkel deneyimi ve teknenin güneşlenme minderlerinde dinlenme.</p>
+      </div>
+      <div class="tour-card">
+        <div class="tour-time">14:00</div>
+        <h3>Deniz Üstünde Sofra</h3>
+        <p>Özenle hazırlanmış lezzetli menü ve ikramlar eşliğinde denizin ortasında eşsiz sofra zevki.</p>
+      </div>
+      <div class="tour-card">
+        <div class="tour-time">16:00</div>
+        <h3>Liman Dönüşü</h3>
+        <p>Unutulmaz anılar ve fotoğraflarla Antalya Kaleiçi Yat Limanı'na emniyetli yanaşma.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÖZEL KUTLAMA & VİDEO 2 (KAHVALTI / SOFRA) -->
+  <section id="ozel">
+    <div class="event-section">
+      <div class="event-video-wrapper">
+        <video class="event-video" autoplay muted loop playsinline>
+          <source src="video-sofra.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="event-content">
+        <span class="section-tag">Özel Anlar</span>
+        <h3>Evlilik Teklifi, Doğum Günü & VIP Sofralar</h3>
+        <p>Hayatınızın en anlamlı anlarını Akdeniz’in kalbinde, yalnızca size ve sevdiklerinize özel hazırlanan konseptlerle taçlandırın.</p>
+        <ul class="event-list">
+          <li>Romantik Evlilik Teklifi ve gün batımı süslemesi</li>
+          <li>Butik Doğum Günü ve Yıldönümü kutlamaları</li>
+          <li>Zengin kahvaltı ve gurme öğle yemeği servisleri</li>
+          <li>Bluetooth ses sistemiyle dilediğiniz müziği çalma imkânı</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REZERVASYON & IBAN FORMU -->
+  <section id="rezervasyon">
+    <div class="section-header">
+      <span class="section-tag">Rezervasyon & Bilet</span>
+      <h2 class="section-title">Yerinizi Hemen Ayırtın</h2>
+    </div>
+
+    <div class="booking-wrapper">
+      <!-- FORM -->
+      <form id="reservationForm" onsubmit="sendToWhatsapp(event)">
+        <div class="form-group">
+          <label>Adınız Soyadınız *</label>
+          <input type="text" id="custName" class="form-control" placeholder="Örn: Ahmet Yılmaz" required>
+        </div>
+
+        <div class="form-group">
+          <label>Telefon Numaranız *</label>
+          <input type="tel" id="custPhone" class="form-control" placeholder="Örn: 05xx xxx xx xx" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div class="form-group">
+            <label>Tur Tarihi *</label>
+            <input type="date" id="tourDate" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Misafir Sayısı *</label>
+            <input type="number" id="guestCount" class="form-control" min="1" max="15" placeholder="Örn: 4" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Tur Tercihi / Konsept</label>
+          <select id="tourConcept" class="form-control">
+            <option value="Standart Günlük Tur (11:00 - 16:00)">Standart Günlük Tur (11:00 - 16:00)</option>
+            <option value="Evlilik Teklifi Organizasyonu">Evlilik Teklifi Organizasyonu</option>
+            <option value="Doğum Günü & Kutlama">Doğum Günü & Kutlama</option>
+            <option value="VIP Özel Yemek / Kahvaltı Turu">VIP Özel Yemek / Kahvaltı Turu</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Özel İstekler / Notlar</label>
+          <textarea id="custNotes" class="form-control" rows="3" placeholder="Varsa özel istek veya süsleme talepleri..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-gold" style="width: 100%; border: none; cursor: pointer; font-size: 15px;">
+          WhatsApp ile Rezervasyonu Onayla ➔
+        </button>
+      </form>
+
+      <!-- IBAN KARTI -->
+      <div class="iban-card">
+        <div>
+          <h4>Ödeme & Havale Bilgileri</h4>
+          <div class="bank-name">DenizBank | Resmi Hesap</div>
+
+          <div class="iban-box">
+            <div class="iban-label">Alıcı / Hesap Sahibi</div>
+            <div style="font-weight: 600; margin-bottom: 8px;">Mehmet Demirkıran</div>
+            
+            <div class="iban-label">IBAN Numarası</div>
+            <div class="iban-number" id="ibanText">TR93 0013 4000 0021 1467 0000 02</div>
+            <button type="button" class="btn-copy" onclick="copyIban()">IBAN'ı Kopyala</button>
+            <span id="copyFeedback" style="font-size: 11px; color: var(--sand); margin-left: 8px; display: none;">Kopyalandı!</span>
+          </div>
+        </div>
+
+        <p class="iban-note">
+          * Rezervasyonunuzun kesinleşmesi için lütfen havale/EFT açıklama kısmına <strong>Ad-Soyad ve Tur Tarihini</strong> yazınız. Dekontu WhatsApp üzerinden bize iletebilirsiniz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOKASYON & FOOTER -->
+  <footer id="konum">
+    <div class="footer-brand">KIZIL ELMA</div>
+    <div class="footer-info">
+      📍 Tarihi Kaleiçi Yat Limanı, Muratpaşa / Antalya <br>
+      ⏰ Tur Saatleri: Her Gün 11:00 – 16:00 <br>
+      📞 İletişim / WhatsApp: <a href="https://wa.me/905323847324" class="footer-phone">+90 532 384 73 24</a>
+    </div>
+    <div class="copyright">
+      © Kızıl Elma Yatçılık. Tüm Hakları Saklıdır.
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // DOĞRUDAN TANIMLANAN WHATSAPP NUMARASI
+    const MY_WHATSAPP_NUMBER = "905323847324";
+
+    function copyIban() {
+      const iban = document.getElementById("ibanText").innerText.replace(/\s+/g, '');
+      navigator.clipboard.writeText(iban).then(() => {
+        const feedback = document.getElementById("copyFeedback");
+        feedback.style.display = "inline";
+        setTimeout(() => feedback.style.display = "none", 2500);
+      });
+    }
+
+    function sendToWhatsapp(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById("custName").value;
+      const phone = document.getElementById("custPhone").value;
+      const date = document.getElementById("tourDate").value;
+      const guests = document.getElementById("guestCount").value;
+      const concept = document.getElementById("tourConcept").value;
+      const notes = document.getElementById("custNotes").value || "Belirtilmedi";
+
+      const message = 
+        `Merhaba Kızıl Elma Ekibi, özel tekne rezervasyonu talebim var:%0A%0A` +
+        `👤 *Ad Soyad:* ${encodeURIComponent(name)}%0A` +
+        `📞 *Telefon:* ${encodeURIComponent(phone)}%0A` +
+        `📅 *Tur Tarihi:* ${encodeURIComponent(date)} (11:00 - 16:00)%0A` +
+        `👥 *Misafir Sayısı:* ${encodeURIComponent(guests)} Kişi%0A` +
+        `✨ *Konsept:* ${encodeURIComponent(concept)}%0A` +
+        `📝 *Notlar:* ${encodeURIComponent(notes)}%0A%0A` +
+        `💳 DenizBank hesabınıza ödeme dekontunu bu mesajla iletiyorum.`;
+
+      const whatsappUrl = `https://wa.me/${MY_WHATSAPP_NUMBER}?text=${message}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
